@@ -1,0 +1,12 @@
+<script>
+    const path = window.location.pathname.split("/");
+    const user = path[path.length - 1];
+
+    if (!user) {
+        document.body.innerHTML = "<h2>Introduce un usuario válido</h2>";
+    } else {
+        window.location.href = 
+            "https://piravision.github.io/COLECCION/USUARIOS/" + user + "/coleccion.html";
+    }
+</script>
+
