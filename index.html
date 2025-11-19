@@ -1,12 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Redirigiendo...</title>
+</head>
+<body>
 <script>
-    const path = window.location.pathname.split("/");
-    const user = path[path.length - 1];
+    // Obtiene la ruta completa después de /Coleccion/
+    const path = window.location.pathname.replace("/Coleccion/", "");
 
-    if (!user) {
-        document.body.innerHTML = "<h2>Introduce un usuario válido</h2>";
+    // Elimina cualquier "/" sobrante
+    const user = path.replace("/", "");
+
+    if (!user || user === "") {
+        document.body.innerHTML = "<h2>Usuario no válido</h2>";
     } else {
-        window.location.href = 
+        const destino =
             "https://piravision.github.io/COLECCION/USUARIOS/" + user + "/coleccion.html";
+
+        console.log("Redirigiendo a:", destino);
+        window.location.href = destino;
     }
 </script>
+</body>
+</html>
+
+
 
